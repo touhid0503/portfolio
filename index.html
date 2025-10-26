@@ -1,31 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MD. Touhidul Islam | Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- SEO & Social Meta -->
+    <meta name="description" content="MD. Touhidul Islam - Computer Science student skilled in Python, Web Development, and AI Prompt Engineering." />
+    <meta property="og:title" content="MD. Touhidul Islam | Portfolio" />
+    <meta property="og:description" content="Computer Science student skilled in Python, Web Development, and AI." />
+    <meta property="og:url" content="https://touhid0503.github.io/portfolio/" />
+    <meta property="og:image" content="https://touhid0503.github.io/portfolio/preview.png" />
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Dark Mode Toggle -->
+    <script>
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark');
+      }
+    </script>
   </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- Header / Hero Section -->
-    <header class="bg-blue-600 text-white py-16 text-center">
-      <h1 class="text-4xl font-bold mb-2">MD. TOUHIDUL ISLAM</h1>
-      <p class="text-xl mb-4">Computer Science Student | Python & Web Developer | AI Enthusiast</p>
+
+  <body class="bg-gray-50 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200 transition duration-500">
+    <!-- Header -->
+    <header class="bg-blue-600 dark:bg-blue-700 text-white py-10 md:py-16 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">MD. TOUHIDUL ISLAM</h1>
+      <p class="text-lg md:text-xl mb-4">Computer Science Student | Python & Web Developer | AI Enthusiast</p>
       <div class="space-x-4">
-        <a href="https://www.linkedin.com/in/touhid0503/" class="underline">LinkedIn</a>
-        <a href="https://github.com/touhid0503" class="underline">GitHub</a>
+        <a href="https://www.linkedin.com/in/touhid0503/" target="_blank" class="underline">LinkedIn</a>
+        <a href="https://github.com/touhid0503" target="_blank" class="underline">GitHub</a>
       </div>
-      <p class="mt-4">📍 Rajshahi, Bangladesh | 📞 +8801840760926 | ✉️ <a href="mailto:touhid0503@gmail.com" class="underline">touhid0503@gmail.com</a></p>
+      <p class="mt-4 text-sm md:text-base">
+        📍 Rajshahi, Bangladesh | 📞 +8801840760926 | ✉️ 
+        <a href="mailto:touhid0503@gmail.com" class="underline">touhid0503@gmail.com</a>
+      </p>
+      <button onclick="toggleTheme()" class="mt-6 bg-white text-blue-600 dark:bg-gray-800 dark:text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition">🌙 Toggle Theme</button>
     </header>
 
-    <!-- About Me Section -->
-    <section class="max-w-4xl mx-auto py-16 px-4">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <p class="text-gray-700 leading-relaxed">Enthusiastic and detail-oriented Computer Science student with hands-on experience in Python programming, web development (Django, Flask, PHP), and AI prompt engineering. Skilled at combining analytical thinking with creative problem-solving to deliver efficient digital solutions. Passionate about continuous learning, teamwork, and leveraging technology to drive innovation in education, AI, and community development.</p>
+    <!-- About Section -->
+    <section id="about" class="max-w-4xl mx-auto py-16 px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center">About Me</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+        Enthusiastic and detail-oriented Computer Science student with hands-on experience in Python programming,
+        web development (Django, Flask, PHP), and AI prompt engineering. Skilled at combining analytical thinking with
+        creative problem-solving to deliver efficient digital solutions. Passionate about continuous learning, teamwork,
+        and leveraging technology to drive innovation in education, AI, and community development.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white dark:bg-gray-700 shadow-md rounded-lg p-6 hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold mb-2">Entrepreneurship Management System</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-2">
+              A web platform connecting entrepreneurs and users with admin-controlled profiles.
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Tech: PHP, MySQL, HTML, CSS</p>
+            <a href="https://github.com/touhid0503" target="_blank" class="underline text-blue-600">View on GitHub</a>
+          </div>
+
+          <div class="bg-white dark:bg-gray-700 shadow-md rounded-lg p-6 hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold mb-2">Smart Bio Plant Pot</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-2">
+              An IoT-based eco-friendly plant pot system that monitors moisture and automates watering.
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Tech: IoT, Sensors, Python</p>
+            <a href="https://github.com/touhid0503" target="_blank" class="underline text-blue-600">View on GitHub</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="bg-gray-100 py-16 px-4">
+    <section id="skills" class="py-16 px-4">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl font-bold mb-8 text-center">Key Skills</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -35,7 +88,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-lg mb-2">Web Development</h3>
-            <p>Django, Flask, PHP, SQL, MySQL, Fundamentals of Python for Web</p>
+            <p>Django, Flask, PHP, SQL, MySQL</p>
           </div>
           <div>
             <h3 class="font-semibold text-lg mb-2">AI Tools & Automation</h3>
@@ -54,24 +107,26 @@
     </section>
 
     <!-- Certifications Section -->
-    <section class="max-w-4xl mx-auto py-16 px-4">
-      <h2 class="text-3xl font-bold mb-8 text-center">Certifications</h2>
-      <ul class="list-disc list-inside space-y-2 text-gray-700">
-        <li>Fundamentals of Python for Web Development</li>
-        <li>Fundamentals of Web Development</li>
-        <li>Django for Beginners</li>
-        <li>Run Your First Project with PHP</li>
-        <li>AI+ Prompt Engineer™: Level 1</li>
-        <li>AgentX: Build Your Own Agent</li>
-        <li>Professional Digital Marketing</li>
-      </ul>
+    <section id="certifications" class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Certifications</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+          <li>Fundamentals of Python for Web Development</li>
+          <li>Fundamentals of Web Development</li>
+          <li>Django for Beginners</li>
+          <li>Run Your First Project with PHP</li>
+          <li>AI+ Prompt Engineer™: Level 1</li>
+          <li>AgentX: Build Your Own Agent</li>
+          <li>Professional Digital Marketing</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="bg-gray-100 py-16 px-4">
+    <section id="experience" class="py-16 px-4">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
-        <div class="space-y-8 text-gray-700">
+        <div class="space-y-8">
           <div>
             <h3 class="font-semibold text-xl">General Member – Youth Club of Bangladesh (YCB)</h3>
             <p class="italic text-sm">Bangladesh | May 2025 – Present</p>
@@ -93,31 +148,36 @@
     </section>
 
     <!-- Education Section -->
-    <section class="max-w-4xl mx-auto py-16 px-4">
-      <h2 class="text-3xl font-bold mb-8 text-center">Education</h2>
-      <div class="space-y-6 text-gray-700">
-        <div>
-          <h3 class="font-semibold text-xl">B.Sc. in Computer Science and Engineering</h3>
-          <p class="italic">Varendra University, Rajshahi | June 2022 – Present</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-xl">Higher Secondary Certificate (HSC), Science</h3>
-          <p class="italic">Rajshahi Government Model School & College, Rajshahi | 2018 – 2020</p>
+    <section id="education" class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Education</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-xl">B.Sc. in Computer Science and Engineering</h3>
+            <p class="italic">Varendra University, Rajshahi | June 2022 – Present</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl">Higher Secondary Certificate (HSC), Science</h3>
+            <p class="italic">Rajshahi Government Model School & College | 2018 – 2020</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="bg-blue-600 text-white py-16 text-center">
+    <section id="contact" class="bg-blue-600 dark:bg-blue-700 text-white py-16 text-center">
       <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-      <p class="mb-2">Email: <a href="mailto:touhid0503@gmail.com" class="underline">touhid0503@gmail.com</a> </p>
+      <p class="mb-2">Email: <a href="mailto:touhid0503@gmail.com" class="underline">touhid0503@gmail.com</a></p>
       <p class="mb-2">Phone: +8801840760926</p>
       <div class="space-x-4 mt-4">
-        <a href="https://www.linkedin.com/in/touhid0503/" class="underline">LinkedIn</a>
-        <a href="https://github.com/touhid0503" class="underline">GitHub</a>
+        <a href="https://www.linkedin.com/in/touhid0503/" target="_blank" class="underline">LinkedIn</a>
+        <a href="https://github.com/touhid0503" target="_blank" class="underline">GitHub</a>
       </div>
     </section>
 
-    <footer class="py-8 text-center text-gray-500 text-sm">&copy; 2025 MD. Touhidul Islam. All Rights Reserved.</footer>
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+      &copy; 2025 MD. Touhidul Islam. All Rights Reserved.
+    </footer>
   </body>
 </html>
