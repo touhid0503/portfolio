@@ -13,15 +13,26 @@
     <meta property="og:url" content="https://touhid0503.github.io/portfolio/" />
     <meta property="og:image" content="https://touhid0503.github.io/portfolio/preview.png" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Dark Mode Toggle -->
+        <!-- Tailwind CSS -->
     <script>
-      function toggleTheme() {
-        document.documentElement.classList.toggle('dark');
+      tailwind.config = {
+        darkMode: 'class',
       }
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Dark Mode Toggle -->
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+      function toggleTheme() {
+        const html = document.documentElement;
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      }
+    </script>
+
   </head>
 
   <body class="bg-gray-50 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200 transition duration-500">
