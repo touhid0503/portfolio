@@ -1,92 +1,128 @@
 /*
  * ======================================================================================
- * Author:       S. M. ZAKI AL SAAD MARJAN
- * Qualification: BSc in CSE, VU
- * Position:     Owner & Founder Of HypnotiXstudio
+ * Contributor    :      S. M. ZAKI AL SAAD MARJAN
+ * Qualification  :      BSc in CSE, VU
+ * Position       :      Owner & Founder Of HypnotiXstudio
  * ======================================================================================
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
 
-/* Smooth Scrolling */
+/* Base Configurations */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 }
 
-/* Custom Skill Tag Styling to keep HTML clean */
-.skill-card {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 1px 2px rgba(2,6,23,0.06);
-    border: 1px solid #f1f5f9;
-    transition: box-shadow .2s ease, transform .2s ease;
+/* Nav Links */
+.nav-link {
+    @apply text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors;
 }
 
-html.dark .skill-card {
-    background-color: #0f172a; /* approximate slate-800 */
-    border-color: #334155; /* approximate slate-700 */
+/* Buttons */
+.btn-primary {
+    @apply px-8 py-3.5 bg-primary hover:bg-indigo-600 text-white rounded-xl font-semibold transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 flex items-center;
 }
 
-.skill-card:hover {
-    box-shadow: 0 8px 24px rgba(2,6,23,0.08);
+.btn-secondary {
+    @apply px-8 py-3.5 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-slate-700 dark:text-slate-200 rounded-xl font-semibold transition-all flex items-center gap-2 hover:-translate-y-0.5 backdrop-blur-sm;
 }
 
-.skill-tag {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background-color: #f1f5f9;
-    color: #334155;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border: 1px solid #e2e8f0;
+/* Cards & Containers */
+.glass-card {
+    @apply bg-white/70 dark:bg-slate-800/40 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-sm transition-all;
 }
 
-html.dark .skill-tag {
-    background-color: #334155; /* approximate slate-700 */
-    color: #e2e8f0; /* approximate slate-200 */
-    border-color: #475569; /* approximate slate-600 */
+.project-card {
+    @apply bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1;
+}
+
+/* Minimalist Tech Badges */
+.tech-badge {
+    @apply px-4 py-2 bg-transparent text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium border border-slate-300 dark:border-slate-700 hover:border-primary dark:hover:border-primary hover:text-primary dark:hover:text-primary transition-all duration-300 cursor-default hover:bg-slate-50 dark:hover:bg-slate-800/50;
+}
+
+/* Section Geometry / Cuts */
+.section-slant {
+    clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+    margin-top: -5vw;
+    padding-top: calc(6rem + 5vw);
+}
+
+.section-chevron {
+    clip-path: polygon(0 0, 50% 5vw, 100% 0, 100% 100%, 0 100%);
+    margin-top: -5vw;
+    padding-top: calc(6rem + 5vw);
+}
+
+.section-slant-reverse {
+    clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+    margin-top: -5vw;
+    padding-top: calc(6rem + 5vw);
+}
+
+.section-peak {
+    clip-path: polygon(0 5vw, 50% 0, 100% 5vw, 100% 100%, 0 100%);
+    margin-top: -5vw;
+    padding-top: calc(6rem + 5vw);
+}
+
+/* Timeline specific styles */
+.timeline-container {
+    @apply border-l-2 border-slate-300 dark:border-slate-700 ml-3 pl-8 relative space-y-10;
+}
+
+.timeline-item {
+    @apply relative;
+}
+
+.timeline-dot {
+    @apply absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-slate-50 dark:border-darkalt shadow-sm;
+}
+
+/* Social Icons */
+.social-icon {
+    @apply w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 border border-slate-700;
 }
 
 /* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
 }
 
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+.animate-blob {
+    animation: blob 7s infinite;
 }
 
-/* Scrollbar Styling */
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scrollbar Customization */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    @apply bg-slate-50 dark:bg-[#0B1120];
 }
-
-html.dark ::-webkit-scrollbar-track {
-    background: #0f172a;
-}
-
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full border-2 border-solid border-slate-50 dark:border-[#0B1120];
 }
-
-html.dark ::-webkit-scrollbar-thumb {
-    background: #334155;
-}
-
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    @apply bg-slate-400 dark:bg-slate-600;
 }
